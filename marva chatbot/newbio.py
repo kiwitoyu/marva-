@@ -51,7 +51,7 @@ class BiologyQuizApp:
         self.ask_question()
 
     def display_message(self, message, is_bot=True):
-        """Display messages with professional chat bubble layout."""
+        
         self.chat_window.config(state=tk.NORMAL)
 
         if is_bot:
@@ -72,7 +72,7 @@ class BiologyQuizApp:
         self.chat_window.yview(tk.END)
 
     def ask_question(self):
-        """Ask the current question to the user."""
+        
         if self.current_question_index < len(self.questions):
             question = self.questions[self.current_question_index]["question"]
             self.display_message(f"Question: {question}", is_bot=True)
@@ -80,7 +80,7 @@ class BiologyQuizApp:
             self.display_message("Quiz complete! Great job!", is_bot=True)
 
     def handle_user_input(self):
-        """Handle the user's input and provide feedback."""
+        
         user_input = self.entry_box.get().strip().lower()
         if not user_input:
             return
